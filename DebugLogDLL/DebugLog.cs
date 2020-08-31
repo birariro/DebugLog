@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Text;
 
-namespace Csharp_DebugLogDLL
+namespace DebugLogDLL
 {
     public class DebugLog
     {

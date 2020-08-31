@@ -1,4 +1,4 @@
-# Csharp-UtillityClassDLL
+# Csharp-DebugLogDLL
 :speech_balloon: C# an effort to catch a bug
 
 
