@@ -18,7 +18,8 @@ not show in your logcat view
 
 ### instruction
 -----------------------------------
-![carbon](https://user-images.githubusercontent.com/52993842/91713266-63e08f80-ebc4-11ea-8654-4dbe87426ff0.png)
+![carbon](https://user-images.githubusercontent.com/52993842/91717336-49121900-ebcc-11ea-87a3-70b023154d0f.png)
+
 
 
 ### DebugLog Result
