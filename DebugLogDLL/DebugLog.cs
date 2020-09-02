@@ -54,10 +54,11 @@ namespace DebugLogDLL
             StringBuilder result = new StringBuilder();
             short count = Convert.ToByte(stackTrace.FrameCount);
             string spaceCount = "";
-            count = count > (short)10 ? (short)10 : (short)count;
-            for (int i = 1; i <= count - 2; i++)
+            count = count > (short)5 ? (short)5 : (short)count;
+            for (int i = 1; i <= count; i++)
             {
                 StackFrame stackFrame = stackTrace.GetFrame(count - i);
+                if (stackFrame.GetMethod().ToString().Equals("Void e(System.Exception)") || stackFrame.GetMethod().ToString().Equals("Void ExceptionLog(System.Exception)")) break;
 
                 for (int ii = 1; ii < i; ii++)
                 {
@@ -81,7 +82,6 @@ namespace DebugLogDLL
                 result.Append("[    Line   ]  : ");
                 result.Append(stackFrame.GetFileLineNumber());
                 result.Append("\n");
-
 
             }
 
