@@ -18,11 +18,13 @@ not show in your logcat view
 
 ### instruction
 -----------------------------------
-![carbon](https://user-images.githubusercontent.com/52993842/91717336-49121900-ebcc-11ea-87a3-70b023154d0f.png)
+'''
+DebugLog.e(Exception)
+'''
 
 
 
 ### DebugLog Result
 -----------------------------------
-![carbon (1)](https://user-images.githubusercontent.com/52993842/91713363-98544b80-ebc4-11ea-8295-33d3cbff9232.png)
+![디버그로그](https://user-images.githubusercontent.com/52993842/92225037-a3b5b880-eedd-11ea-9bcf-9a3e1c9c2320.png)
 

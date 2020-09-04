@@ -1,9 +1,0 @@
-D:\ProjectPath\GitOpen\Csharp-DebugLogDLL\DebugLogDLL\bin\Release\netstandard2.0\DebugLogDLL.deps.json
-D:\ProjectPath\GitOpen\Csharp-DebugLogDLL\DebugLogDLL\bin\Release\netstandard2.0\DebugLogDLL.dll
-D:\ProjectPath\GitOpen\Csharp-DebugLogDLL\DebugLogDLL\bin\Release\netstandard2.0\DebugLogDLL.pdb
-D:\ProjectPath\GitOpen\Csharp-DebugLogDLL\DebugLogDLL\obj\Release\netstandard2.0\DebugLogDLL.AssemblyInfoInputs.cache
-D:\ProjectPath\GitOpen\Csharp-DebugLogDLL\DebugLogDLL\obj\Release\netstandard2.0\DebugLogDLL.AssemblyInfo.cs
-D:\ProjectPath\GitOpen\Csharp-DebugLogDLL\DebugLogDLL\obj\Release\netstandard2.0\DebugLogDLL.csproj.CoreCompileInputs.cache
-D:\ProjectPath\GitOpen\Csharp-DebugLogDLL\DebugLogDLL\obj\Release\netstandard2.0\DebugLogDLL.dll
-D:\ProjectPath\GitOpen\Csharp-DebugLogDLL\DebugLogDLL\obj\Release\netstandard2.0\DebugLogDLL.pdb
-D:\ProjectPath\GitOpen\Csharp-DebugLogDLL\DebugLogDLL\obj\Release\netstandard2.0\DebugLogDLL.csprojAssemblyReference.cache
