@@ -15,12 +15,8 @@ namespace DebugLogCalss
         [System.Diagnostics.Conditional("DEBUG")]
         public static void m(params object[] messages)
         {
-            try
-            {
-                MessageLog(messages);
-            }
-            catch { };
-
+           
+             MessageLog(messages);
         }
         /// <summary>
         /// Debug mode shows logcat 
@@ -31,32 +27,43 @@ namespace DebugLogCalss
         //[System.Diagnostics.Conditional("DEBUG")]
         public static void e(Exception e, string Token = null)
         {
-            try
-            {
-                //DetailExceptionLog(e); // select 1
-                SimpleExceptionLog(e);// select 2
-                if (Token != null) SendLogSave(result, Token);
-            }
-            catch { };
-
+            //DetailExceptionLog(e); // select 1
+            SimpleExceptionLog(e);// select 2
+            if (Token != null) SendLogSave(result, Token);
         }
 
         private static void MessageLog(params object[] messages)
         {
-            string today = DateTime.Now.ToString("yyyy.MM.dd-HH.mm.ss");
-            StringBuilder result = new StringBuilder();
-            result.Append("-> ");
-            result.Append(today);
-            result.Append(" ");
-            result.Append("[ Log ]  : ");
-
-            foreach (object msssage in messages)
+            try
             {
-                result.Append(msssage);
-                result.Append("  ");
+                string today = DateTime.Now.ToString("yyyy.MM.dd-HH.mm.ss");
+                StringBuilder result = new StringBuilder();
+                result.Append("-> ");
+                result.Append(today);
+
+                string callPath = new StackTrace(2).ToString();  //로그를 호출한 위치
+
+                if (callPath != null)
+                {
+                    callPath = (callPath.Split(new string[] { "\n" }, StringSplitOptions.None)[0]).Replace("at", "");
+                    callPath = callPath.Trim();
+                    result.Append("/");
+                    result.Append(callPath);
+                }
+                result.Append("\n > [ Log ]  : ");
+
+                foreach (object msssage in messages)
+                {
+                    result.Append(msssage);
+                    result.Append("  ");
+                }
+                result.Append("\n");
+                System.Diagnostics.Debug.WriteLine(result);
             }
-            result.Append("\n");
-            System.Diagnostics.Debug.WriteLine(result);
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine(e.Message);
+            }
         }
 
    
