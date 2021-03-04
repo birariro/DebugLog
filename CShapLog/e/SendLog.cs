@@ -21,52 +21,45 @@ namespace CShapLog.e
         }
         private async Task<bool> Send(string token, string log)
         {
-            log = log.Replace("\r\n", "\\r\\n"); //서버에게 보내는 log 는 개행문자가 다르다.
+   
             string uri = "server URI";
-
+          
             string sendData = "{" + "\"log\":\"" + log + "\"}";
 
-            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(uri);
-            req.Accept = "*/*";
-            req.Method = "POST";
-            req.ContentType = "application/json;charset=UTF-8";
-            req.KeepAlive = true;
-            req.ServerCertificateValidationCallback = delegate { return true; };
-            req.Timeout = 4000;
-            req.Headers.Add("X-AUTH-TOKEN", token);
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
+            request.Accept = "*/*";
+            request.Method = "POST";
+            request.ContentType = "application/json;charset=UTF-8";
+            request.KeepAlive = true;
+            request.ServerCertificateValidationCallback = delegate { return true; };
+            request.Timeout = 4000;
+            request.Headers.Add("X-AUTH-TOKEN", token);
             try
             {
 
-                StreamWriter writer = new StreamWriter(await req.GetRequestStreamAsync());
+                StreamWriter writer = new StreamWriter(await request.GetRequestStreamAsync());
                 writer.Write(sendData);
                 writer.Close();
 
-                HttpWebResponse result = (HttpWebResponse)await req.GetResponseAsync();
-
-                Encoding encode = Encoding.GetEncoding("utf-8");
-                Stream strReceiveStream = result.GetResponseStream();
-                StreamReader reqStreamReader = new StreamReader(strReceiveStream, encode);
-                string strResult = reqStreamReader.ReadToEnd();
+                HttpWebResponse result = (HttpWebResponse)await request.GetResponseAsync();
                 result.Close();
-                reqStreamReader.Close();
-                strReceiveStream.Close();
                 return true;
 
             }
             catch (WebException we)
             {
-                DebugLog.m("[WebException] : " + we.Message);
+                Logger.m("[WebException] : " + we.Message);
 
                 return false;
             }
             catch (Exception LogE)
             {
-                DebugLog.m(LogE.Message);
+                Logger.m(LogE.Message);
                 return false;
             }
             finally
             {
-                req.Abort();
+                request.Abort();
             }
         }
     }

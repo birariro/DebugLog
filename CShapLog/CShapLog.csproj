@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DebugLog.cs" />
+    <Compile Include="Logger.cs" />
     <Compile Include="e\ExceptionLog.cs" />
     <Compile Include="e\SendLog.cs" />
     <Compile Include="m\MessageLog.cs" />

@@ -1,0 +1,6 @@
+C:\Users\qoom\Desktop\k4keye\DebugLog\CShapLog\bin\Release\CShapLog.dll
+C:\Users\qoom\Desktop\k4keye\DebugLog\CShapLog\bin\Release\CShapLog.pdb
+C:\Users\qoom\Desktop\k4keye\DebugLog\CShapLog\obj\Release\CShapLog.csprojAssemblyReference.cache
+C:\Users\qoom\Desktop\k4keye\DebugLog\CShapLog\obj\Release\CShapLog.csproj.CoreCompileInputs.cache
+C:\Users\qoom\Desktop\k4keye\DebugLog\CShapLog\obj\Release\CShapLog.dll
+C:\Users\qoom\Desktop\k4keye\DebugLog\CShapLog\obj\Release\CShapLog.pdb

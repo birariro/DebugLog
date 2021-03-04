@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CShapLog
 {
-    public class DebugLog
+    public class Logger
     {
         /// <summary>
         /// Debug mode shows logcat 
@@ -21,18 +21,7 @@ namespace CShapLog
         {
             MessageLog.Call(messages);
         }
-        /// <summary>
-        /// Debug mode shows logcat 
-        /// Release mode doesn't show the logcat
-        /// Add the exception as a parameter.
-        /// </summary>
-        /// <param name="e">data type Exception</param>
-        [System.Diagnostics.Conditional("DEBUG")]
-        public static void e(Exception e)
-        {
-            string log = ExceptionLog.Call(e);
-            Console.WriteLine(log);
-        }
+        
 
         /// <summary>
         /// debug mode shows logcat and send to server.
@@ -44,13 +33,14 @@ namespace CShapLog
         /// <param name="e">data type Exception</param>
         /// <param name="token">variables to the server.</param>
         //[System.Diagnostics.Conditional("DEBUG")]
-        public static void e(Exception e, string token)
+        public static void e(Exception e, string token="")
         {
             string log = ExceptionLog.Call(e);
-            Console.WriteLine(log);
             SendLog.Call(token, log);
 
         }
+
+       
 
 
     }
