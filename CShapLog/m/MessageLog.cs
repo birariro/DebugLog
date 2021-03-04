@@ -34,8 +34,10 @@ namespace CShapLog.m
                 if (callPath != null)
                 {
                     callPath = (callPath.Split(new string[] { "\n" }, StringSplitOptions.None)[0]).Replace("at", "");
+                    var temp = callPath.Split('.');
+                    callPath = temp[temp.Length - 1];
                     callPath = callPath.Trim();
-                    result.Append("/");
+                    result.Append("  ");
                     result.Append(callPath);
                 }
                 result.Append("\n > [ Log ]  : ");
