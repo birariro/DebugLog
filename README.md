@@ -9,11 +9,11 @@ JJinggg(https://github.com/JJinggg)
 ## DebugLog
 
 ### :eyes: Debug Mode
-show in your logcat view   
+Debug 모드에서는 Console에 출력된다. 
 
 
 ### :ghost: Release Model
-not show in your logcat view   
+Release 모드에서는 Console에 출력하지 않는다.
 
 
 
