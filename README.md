@@ -20,9 +20,9 @@ Release 모드에서는 Console에 출력하지 않는다.
 ### :page_with_curl: instruction
 -----------------------------------
 ```
-DebugLog.e(Exception object)
-DebugLog.e(Exception object,string token) //server API
-DebugLog.m(LogMessage)
+Logger.e(Exception object)
+Logger.e(Exception object,string token) //server API
+Logger.m(LogMessage)
 ```
 
 
