@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CShapLog</name>
+    </assembly>
+    <members>
+        <member name="T:CShapLog.Logger">
+            <summary>
+            C# 에서 사용될 Logger 이다.
+            Logger.m() 을통해 Console에 원하는 문자열을 출력할수있다.
+            Logger.e() 를통해 Console에  Exception 내용을 출력할수있다.
+            </summary>
+        </member>
+        <member name="M:CShapLog.Logger.m(System.Object[])">
+            <summary>
+            Debug 에서는 Console 에 출력된다.
+            Release 에서는 동작하지 않는다.
+            </summary>
+            <param name="messages">아무값이나 넣어 출력할수있다.</param>
+        </member>
+        <member name="M:CShapLog.Logger.e(System.Exception,System.String)">
+            <summary>
+            debug 에서는 Console에 출력하고 서버에게 전달할수있다.
+            Release 에서는 Console에 출력하지않고 서버에게 전달한다.
+            만약 서버에게 전달하지않을거면 SendLog.Call() 을 제거해라
+            </summary>
+            <param name="exception">Exception 을 넣는다.</param>
+            <param name="token">서버에게 필요한 데이터</param>
+        </member>
+    </members>
+</doc>

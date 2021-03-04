@@ -21,8 +21,14 @@ namespace CShapLog.e
         }
         private async Task<bool> Send(string token, string log)
         {
-   
-            string uri = "server URI";
+            log = log.Replace("\r\n", "\\r\\n"); //서버에게 보내는 log 는 개행문자가 다르다.
+            log = log.Replace("[", "-"); //서버가 받을수없는 문자열을 치환한다.
+            log = log.Replace("]", "-");
+            log = log.Replace(":", "-");
+            log = log.Replace("/", "__");
+
+            string uri = "http://log.sellercheckserver.co.kr/log/app/string";
+            //string uri = "server URI";
           
             string sendData = "{" + "\"log\":\"" + log + "\"}";
 

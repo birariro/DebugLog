@@ -4,3 +4,4 @@ C:\Users\qoom\Desktop\k4keye\DebugLog\CShapLog\obj\Release\CShapLog.csprojAssemb
 C:\Users\qoom\Desktop\k4keye\DebugLog\CShapLog\obj\Release\CShapLog.csproj.CoreCompileInputs.cache
 C:\Users\qoom\Desktop\k4keye\DebugLog\CShapLog\obj\Release\CShapLog.dll
 C:\Users\qoom\Desktop\k4keye\DebugLog\CShapLog\obj\Release\CShapLog.pdb
+C:\Users\qoom\Desktop\k4keye\DebugLog\CShapLog\bin\Release\CShapLog.xml
