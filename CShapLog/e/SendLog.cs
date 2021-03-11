@@ -21,7 +21,10 @@ namespace CShapLog.e
         }
         private async Task<bool> Send(string token, string log)
         {
-           
+            log = log.Replace("\r", "\\r"); //서버에게 보내는 log 는 개행문자가 다르다.
+            log = log.Replace("\n", "\\n"); //서버에게 보내는 log 는 개행문자가 다르다.
+
+            
             string uri = "server URI";
           
             string sendData = "{" + "\"log\":\"" + log + "\"}";
@@ -41,8 +44,7 @@ namespace CShapLog.e
                 writer.Write(sendData);
                 writer.Close();
 
-                HttpWebResponse result = (HttpWebResponse)await request.GetResponseAsync();
-                result.Close();
+                await request.GetResponseAsync();
                 return true;
 
             }

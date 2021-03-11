@@ -26,7 +26,7 @@ namespace CShapLog.e
                 StringBuilder result = new StringBuilder();
                 int count = Convert.ToInt32(stackTrace.FrameCount);
 
-                count = count > 5 ? 5 : count;
+                count = count > 10 ? 10 : count;
 
                 string today = DateTime.Now.ToString("yyyy.MM.dd-HH.mm.ss");
                 result.Append("  ---- StackTrace Start ----   ");
@@ -93,13 +93,16 @@ namespace CShapLog.e
             StringBuilder result = new StringBuilder();
             if (fullFile != null)
             {
-                int classLocation = fullFile.LastIndexOf("\\");
+                int classLocation = fullFile.LastIndexOf("/");
                 string FileName = fullFile.Substring(classLocation + 1);
+
+                classLocation = FileName.LastIndexOf("\\");
+                FileName = FileName.Substring(classLocation + 1);
                 result.Append(FileName);
             }
             else
             {
-                result.Append("none");
+                result.Append("Empty");
             }
             if (fullMethod != null)
             {

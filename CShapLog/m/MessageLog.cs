@@ -34,8 +34,20 @@ namespace CShapLog.m
                 if (callPath != null)
                 {
                     callPath = (callPath.Split(new string[] { "\n" }, StringSplitOptions.None)[0]).Replace("at", "");
-                    var temp = callPath.Split('.');
-                    callPath = temp[temp.Length - 1];
+                    //경로와 파라미터+시스템 경로 분리 
+                    //ServerDaTransForm.Default.Da.LoginDa.SaveDa (System.String _token, System.Boolean _autoLoginFlag) [0x001fe] in <4526274351d54b789f4e183038001336>:0 
+                    string[] pathList = (callPath.Split(new string[] { " (" }, StringSplitOptions.None));
+
+                    //호출한 클래스와 메소드 명 추출
+                    //LoginDa.SaveDa
+                    string[] callFilePathList = pathList[0].Split('.');
+                    string callFilePath = $"{callFilePathList[callFilePathList.Length - 2]}.{callFilePathList[callFilePathList.Length - 1]}";
+                    //메소드 파라미터 추출
+                    //(System.String _token, System.Boolean _autoLoginFlag)
+                    string callArgs = $"({pathList[1].Split(')')[0]})";
+
+                    callPath = callFilePath + callArgs;
+
                     callPath = callPath.Trim();
                     result.Append("  ");
                     result.Append(callPath);
